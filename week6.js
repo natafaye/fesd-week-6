@@ -1,72 +1,61 @@
 
-// saving to phone
-function myDad() {
-    1232332432
+
+let runners = []
+
+runners.push("Abigail")
+runners.push("Stacey")
+runners.push("James")
+runners.push("Maiya")
+
+// Logs out each runner's name and what place they got
+
+for(let i = 0; i < runners.length; i++) {
+    console.log(i + 1 + ": " + runners[i])
 }
 
-// call dad
-myDad()
-myDad()
-myDad()
+let i = 0;
+while(i <= runners.length - 1) {
+    console.log(runners[i] + " you are in " + (i + 1) + " place") 
+}
+i++
 
 
-function cookInOven(food, temperature) {
-    return "Cooked " + food + " at " + temperature
+
+// Creates the function
+function callDad() {
+    console.log("Calling 432432432")
+    console.log("Hey there!")
 }
 
-function cookInMicrowave(food, seconds) {
-    let cookedFood = "Cooked " + food + " for " + seconds + " seconds"
-    return cookedFood
-}
-
-let cookedRice = cookInOven("rice", 200)
-let cookedChicken = cookInOven("chicken", 340)
-console.log(cookedRice + " and " + cookedChicken)
-
-// Does the exact same thing
-console.log(cookInOven("rice", 200) + " and " + cookInOven("chicken", 340))
+// call / invoke = to run the function
+callDad()
 
 
-
-// Random function example
+// Create a function
+// parameter = input to the function
 function formatMoney(amount) {
+    // The function handles making the variable for you and setting it
+    // let amount = WHATEVER THEY PASSED IN
     return "$" + amount.toFixed(2)
 }
 
-const formattedPi = formatMoney(3.415)
-console.log(formattedPi)
+// pass 2.7 into the amount parameter
+formatMoney(2.7)
+
+// pass 5 into the amount parameter
+formatMoney(5)
+
+// pass 2.58 into the amount parameter
+formatMoney(2.58)
+
+let total = 34.57
+alert("Your total for the cart is " + formatMoney(total))
+
+let giftCardBalance = 0.38
+alert("You have " + formatMoney(giftCardBalance) + " left over on your Gift Card")
 
 
-// Random function example
-function formatAmount(amount, noun) {
-    if(amount === 1) {
-        return amount + " " + noun
-    }
-    return amount + " " + noun + "s"
+function toaster(bread) {
+    alert(bread) // tweeting out about the bread
+    return bread // giving the bread back to the person who started the toaster
 }
-
-let amountOfCats = 4
-console.log("You have " + formatAmount(amountOfCats, "cat"))
-
-// Don't do this to your poor cat! EVEN NUMBERS
-amountOfCats = 1
-console.log("You have " + formatAmount(amountOfCats, "cat"))
-
-
-// Random function example (very imporant)
-function hasCorrectAmountOfCats(amountOfCats) {
-    // if odd amount
-    if(amountOfCats === 1) {
-        alert("SATAN")
-    }
-    else if(amountOfCats % 2 === 1) {
-        alert("YOU HORRIBLE PERSON! Get another cat! Cats need friends!")
-    }
-    else {
-        alert("You're good. Carry on.")
-    }
-}
-
-// hasCorrectAmountOfCats(3)
-
-// hasCorrectAmountOfCats(6)
