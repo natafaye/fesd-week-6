@@ -1,74 +1,58 @@
+// Data Types
+// Numbers
+// Booleans
+// Strings
+// null
+// undefined
+// Arrays - lists of something
 
-// make (declare) a function
-function anyNameWeWant() {
-    // the code that will run when you call the function
+// splice -> we use to remove or add things to the middle of an array (CHANGES THE ARRAY)
+// scissors and tape messing up the array
+
+// slice -> copies a chunk of an array (DOES NOT CHANGE THE ARRAY)
+// photocopy machine
+
+
+
+
+// Function is a saved chunk of code that can be run at any time
+// like saved setting on like a massage chair
+// like saving a contact in your phone
+
+
+// Declaring (making) a function
+// saving a contact in your phone
+function mySpecialFunction() {
+    // saved code to run when this function is triggered
     alert("hello!")
 }
 
-// call a function
-//anyNameWeWant()
-//anyNameWeWant()
-//anyNameWeWant()
-
-// Two reasons we make functions
-// 1) is to make that code reusable
-// 2) is just to organize things - makes the code easier to read
+// Call (trigger) the function
+// mySpecialFunction()
+// mySpecialFunction()
+// mySpecialFunction()
 
 
-// input -> the thing I want formatted -> parameters
-function formatMoney(amount) { // amount is a parameter = a special variable that the function makes and assigns for you
-    // the function does this for us: let amount = 500
-    return "$" + amount.toFixed(2)
-    // return sends the value to wherever the function was called
+
+function tellAJoke(animal) { // animal is a variable - somewhere in the background this runs: let animal = "snake"
+    alert("Why did the " + animal + " cross the road?")
+    alert("To get to the other side!")
 }
 
-let userMoney = 500
-let costOfThing = 20.4
+//console.log(animal) // ERROR
 
-alert("You have " + formatMoney(userMoney) + " and the thing costs " + formatMoney(costOfThing))
-
-// We can pass in the number 4.7 into the amount parameter by doing this
-formatMoney(4.7)
-
+// tellAJoke("monkey") // calling tellAJoke and passing in "monkey" to the animal parameter (variable)
+// tellAJoke("snake")
+// tellAJoke("monkey")
+// tellAJoke()
 
 
-
-function cookInOven(food, temperature) { // food = "rice"; temperature = undefined
-    if(temperature === undefined) {
-        // Emergency exit out because something's not right
-        return "No temperature was given"
-    }
+function cookInOven(food, temperature) { // let food = FIRST THING; let temperature = SECOND THING
     let cookedFood = "Cooked " + food + " at " + temperature
-    return cookedFood
+    return cookedFood // spit out whatever is after the return (simplified to a value)
+    // "Cooked " + food + " at " + temperature
 }
 
-// Calling a function will simplify to whatever that function returns
-// if the function returns nothing it will simplify to undefined
-// if the function returns something it will simplify to that thing
-let cookedRice = cookInOven("rice", 200)
+// The next line is making a variable and setting the variable to what the function returns
+let cookedRice = cookInOven("rice", 350) // functions simplify to whatever that function returns
 console.log(cookedRice)
-
-
-// Over the break stretch learning
-// 1) functions calling other functions - blackjack example
-// 2) arrays of objects
-
-
-// annoying
-let dogName = "Milo"
-let likesFetch = true
-let sheds = true
-let pottyTrained = true
-let likesSnuggles = true
-
-// much better!
-const dog = {
-    name: "Milo",
-    likesFetch: true,
-    sheds: true,
-    pottyTrained: true,
-    likesSnuggles: true
-}
-
-// = means "is"
-// : means "has"
