@@ -1,58 +1,47 @@
-// Data Types
-// Numbers
-// Booleans
-// Strings
-// null
-// undefined
-// Arrays - lists of something
+// "popcorn" = cook on medium for 4 minutes
+// "eggs" = cook 5 minutes for 3 eggs or less and 7 minutes for more than 3 eggs
 
-// splice -> we use to remove or add things to the middle of an array (CHANGES THE ARRAY)
-// scissors and tape messing up the array
-
-// slice -> copies a chunk of an array (DOES NOT CHANGE THE ARRAY)
-// photocopy machine
-
-
-
-
-// Function is a saved chunk of code that can be run at any time
-// like saved setting on like a massage chair
-// like saving a contact in your phone
-
-
-// Declaring (making) a function
-// saving a contact in your phone
-function mySpecialFunction() {
-    // saved code to run when this function is triggered
-    alert("hello!")
+// Saving the function as a contact in my phone
+function myFunctionName() {
+    // the code to trigger when this function runs
+    console.log("hello!")
 }
 
-// Call (trigger) the function
-// mySpecialFunction()
-// mySpecialFunction()
-// mySpecialFunction()
+// Actually call it
+myFunctionName()
 
 
-
-function tellAJoke(animal) { // animal is a variable - somewhere in the background this runs: let animal = "snake"
-    alert("Why did the " + animal + " cross the road?")
-    alert("To get to the other side!")
+function makePopcorn() {
+    alert('Cook for 10 minutes')
 }
 
-//console.log(animal) // ERROR
+// Do not cook in microwave apparently!!!!!
+function cookEggs(numberOfEggs) { // let numberOfEggs = whatever is in the parenthesis
+    // 5 minutes for 3 eggs or less and 7 minutes for more than 3 eggs
+    if (numberOfEggs <= 3) {
+        alert("Cook 5 minutes")
+    } else {
+        alert("Cook 7 minutes")
+    }
+}
 
-// tellAJoke("monkey") // calling tellAJoke and passing in "monkey" to the animal parameter (variable)
-// tellAJoke("snake")
-// tellAJoke("monkey")
-// tellAJoke()
+cookEggs(15)
+
+cookEggs(2)
+
+// Technically argument = value passed in, parameter = the actual variable
+// But developers totally use argument and parameter interchangeably all the time. Sorry.
 
 
-function cookInOven(food, temperature) { // let food = FIRST THING; let temperature = SECOND THING
+
+
+function cookInOven(food, temperature) {
     let cookedFood = "Cooked " + food + " at " + temperature
-    return cookedFood // spit out whatever is after the return (simplified to a value)
-    // "Cooked " + food + " at " + temperature
+    return cookedFood
 }
 
-// The next line is making a variable and setting the variable to what the function returns
-let cookedRice = cookInOven("rice", 350) // functions simplify to whatever that function returns
+const cookedRice = cookInOven("rice", 200)
 console.log(cookedRice)
+
+// return = wherever I called this function, simplify that call to this value
+// passes something from inside a function to outside a function
