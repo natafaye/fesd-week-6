@@ -1,47 +1,83 @@
-// "popcorn" = cook on medium for 4 minutes
-// "eggs" = cook 5 minutes for 3 eggs or less and 7 minutes for more than 3 eggs
+let myFriends = ["billy", "bobby", "sally"]
 
-// Saving the function as a contact in my phone
-function myFunctionName() {
-    // the code to trigger when this function runs
+// fruits.splice(where to start, how many to delete, what to add)
+
+
+// Saving a contact in your phone
+function nameOfTheFunction() {
     console.log("hello!")
 }
 
-// Actually call it
-myFunctionName()
+// Calling the function
+nameOfTheFunction()
 
 
-function makePopcorn() {
-    alert('Cook for 10 minutes')
+// Rice cooker
+// parameter = special variable that's set up by the function
+function cookInRiceCooker(cupsOfRice) { // let cupsOfRice = WHATEVER IS PASSED IN
+    // pretend that you cook it for 3 * cupsOfRice minutes
+    let minutesToCook = cupsOfRice * 3
+    console.log("Cooking for " + minutesToCook + " minutes")
 }
 
-// Do not cook in microwave apparently!!!!!
-function cookEggs(numberOfEggs) { // let numberOfEggs = whatever is in the parenthesis
-    // 5 minutes for 3 eggs or less and 7 minutes for more than 3 eggs
-    if (numberOfEggs <= 3) {
-        alert("Cook 5 minutes")
-    } else {
-        alert("Cook 7 minutes")
-    }
-}
+cookInRiceCooker(4)
 
-cookEggs(15)
-
-cookEggs(2)
-
-// Technically argument = value passed in, parameter = the actual variable
-// But developers totally use argument and parameter interchangeably all the time. Sorry.
+cookInRiceCooker(8)
 
 
 
 
-function cookInOven(food, temperature) {
+
+function cookInOven(food, temperature) { // let food = 200; let temperature = undefined
+    // return // emergency exit out of the function
     let cookedFood = "Cooked " + food + " at " + temperature
     return cookedFood
 }
 
-const cookedRice = cookInOven("rice", 200)
-console.log(cookedRice)
+let cookedRice = cookInOven("rice", 200)
+console.log("What's for dinner? " + cookedRice)
 
-// return = wherever I called this function, simplify that call to this value
-// passes something from inside a function to outside a function
+// console.log and alert show something to a human (user, developer)
+// Posting a picture on social media
+function toastBread(bread) {
+    alert("toasted " + bread) // Posting a picture of the toast on social media
+
+    return "toasted " + bread // actually handing you the toasted bread
+}
+
+// return gives a value to another part of the code
+
+
+
+
+// Takes a number amount and returns a pretty string version
+// with a dollar sign in front and two decimal places
+function formatAsMoney(amount) {
+    return "$" + amount.toFixed(2)
+}
+
+// Making this a function had a few benefits:
+// * easier to change
+// * easier to read
+// * reduced repitition
+
+function checkOut(costOfItem1, costOfItem2) {
+    let total = costOfItem1 + costOfItem2
+    let taxRate = 0.08265
+    let salesTax = total * taxRate
+
+    console.log("Your pre-tax total is " + formatAsMoney(total))
+
+    console.log("You pay " + formatAsMoney(salesTax) + " in sales tax")
+
+    console.log("Your full total is " + formatAsMoney(total + salesTax))
+}
+
+checkOut(3, 4.55)
+
+checkOut(50.42, 1.03)
+
+
+
+// functions calling other functions (parameters and returns)
+// arrays of objects
