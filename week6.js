@@ -1,100 +1,129 @@
+// Basic Data Types
+// strings, numbers, booleans
+// +, -, &&, ||
+// null, undefined
 
-// let myColors = ["red", "orange", "green", "blue"]
-
-// myColors[0] = "fuschia"
-// myColors[1] = myColors[2] + "-blue"
-// let nextColor = myColors[4 - 1]
-// let lastColor = myColors[myColors.length - 1]
-
-// myColors.push("purple")
-
-// // Length of array
-// myColors.length
-
-// console.log(myColors) // ["fuschia", "green-blue", "green", "blue", "purple"]
-// console.log(nextColor) // "blue"
-
-// todolist = ["taxes", "laundry", "dishes"]
-// promptMessage = "What do you need to do?\n\n laundry,dishes"
-// newtodo = "taxes"
+// Complex Data Types
+// array, object
 
 
-// let todolist = ["laundry", "dishes"]
-
-// let promptMessage = "What do you need to do?\n\n"
-
-// let newtodo = prompt(promptMessage + todolist.join("\n"))
-// while(newtodo !== null) {
-//     todolist.unshift(newtodo)
-//     //promptMessage = "What do you need to do?\n\n" + todolist
-//     newtodo = prompt(promptMessage + todolist.join("\n"))
-// }
-
-// console.log(todolist)
+const myFriends = ["paulette", "duncan"]
 
 
-// The #1 Front End Bug
-// I clicked the button and it doesn't look like it did it
-// 3 Options of what happened:
-// Did the click not go through?
-// Did the change don't happen?
-// Did the UI not get updated with the change?
+const fruits = ["apple", "banana", "peach"]
+
+// Indexing into the array at the 1 index
+let middle = fruits[1] // "banana"
+
+// Simplify the part inside the square brackets [] to a number first
+// Then index in with that number
+fruits[2 * 1] // "peach"
+fruits[1 - 1] // "apple"
+
+// First thing in an array -> index in at 0
+fruits[0]
+
+// Last thing in an array
+fruits[fruits.length - 1]
+// fruits[3 - 1]
+// fruits[2]
+
+// Get the current length of the array
+fruits.length
+
+// ["apple", "banana", "peach"]
+fruits[fruits.length - 1] = fruits[0]
+// ["apple", "banana", "apple"]
+fruits[0] = "tomato"
+// ["tomato", "banana", "apple"]
+fruits[1] += " pepper" // fruits[1] = fruits[1] + " pepper"
+// ["tomato", "banana pepper", "apple"]
+
+
+let friend = "hippo"
+friend += "fish"
+// "hippofish"
 
 
 
-// where you make the function doesn't really matter (generally)
-// shoes is a parameter (parameter = a variable thats an input to the function)
-// parameters allow us to customize what the function does
-function runARace(shoes) { // in the background: let shoes = whatever is passed in
-    // Code that will only happen when this function is "called"
-    for(let i = 0; i < 5; i++) {
-        console.log("Taking step " + (i + 1) + " with " + shoes)
-    }
-    return "You came in first place because of your " + shoes + "!"
+// push, pop, splice, shift, unshift
+
+
+
+let finishers = []
+
+
+finishers.push("paulette")
+finishers.push("duncan")
+
+console.log(finishers) // ["paulette", "duncan"]
+
+// Natalie wants to cheat
+finishers.unshift("natalie")
+
+console.log(finishers) // ["natalie", "paulette", "duncan"]
+
+// splice(what index to start at, how many to delete, anything you want to add)
+finishers.splice(1, 0, "star")
+
+console.log(finishers) // ["natalie", "star", "paulette", "duncan"]
+
+
+
+
+// This code will not run on its own
+// Saving a contact in your phone
+// Parameters are just variables attached to one function
+// Pick names for your parameters and put them inside the parenthesis
+function sayHello(nameToGreet) { // let nameToGreet = "Natalie"
+    alert("Hello " + nameToGreet + "!")
+    // The code in here won't run until the function is called
 }
 
-let raceMessage = runARace("Nikes")
-console.log(raceMessage) // "You came in first place because of your Nikes!"
+// Call the function (trigger the code in the curly brackets to run)
+// If this function has parameter(s) we need to give values for those parameter(s)
+// sayHello("Natalie")
+// sayHello("Paulette")
 
-let raceMessage2 = runARace("Adidas")
-console.log(raceMessage) // "You came in first place because of your Adidas!"
 
 
+
+function isEqual(number1, number2) {
+    if(number1 === number2) {
+        alert(number1 + " and " + number2 + " are equal!")
+    } else {
+        alert(number1 + " and " + number2 + " are NOT equal!")
+    }
+}
+
+// Calling isEqual and passing in 5 and 3
+// isEqual(5, 3)
+// isEqual(6, 6)
 
 
 
 function cookInOven(food, temperature) {
   let cookedFood = "Cooked " + food + " at " + temperature
-  return cookedFood // GOODBYE I'M OUTTA HERE
-  alert("THIS CODE WILL NEVER RUN")
+  return cookedFood // "Cooked rice at 200"
 }
 
+// A function call simplifies to whatever that function returns
 let cookedRice = cookInOven("rice", 200)
-let cookedChicken = cookInOven("chicken", 300)
-alert("Dinner is:\n" + cookedRice + "\n" + cookedChicken)
-
-
-// a function call (like cookInOven("rice", 200) ) 
-// simplifies to whatever that function returned (like "Cooked rice at 200")
-
-
-// console.log and alert talk to the user
-// return talks to another part of the code
+console.log(cookedRice)
 
 
 
-function getHandValue(hand) { // let hand = [3, 5, 10]
-    let total = 0 // 18
-    for (let i = 0; i < hand.length; i++) { // i = 3
-        total += hand[i]
-    }
-    return total
+function formatMoney(amount) {
+    // Add a $ and make the number have 2 numbers after the decimal point
+    return "$" + amount.toFixed(2)
 }
 
-let myHand = [3, 5, 10]
-let dealerHand = [1, 10, 10]
 
-let myHandValue = getHandValue(myHand) // WAIT
-let dealerHandValue = getHandValue(dealerHand)
+let product1Price = 3.99
+let product2Price = 2.70
 
-console.log("Mine: " + myHandValue + ", Dealer: " + dealerHandValue)
+let total = product1Price + product2Price
+
+console.log("Here are your purchases: " + product1Price + " and " + product2Price)
+
+console.log("Here are your purchases: " + formatMoney(product1Price) + " and " + formatMoney(product2Price))
